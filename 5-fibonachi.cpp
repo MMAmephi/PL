@@ -4,10 +4,10 @@
 using namespace std;
 
 int fib(int i){
-    if(i==1){
+    if(i == 1){
         return 0;
     }
-    if(i==2){
+    if(i == 2){
         return 1;
     }
     return fib(i-2) + fib(i-1);
@@ -17,11 +17,11 @@ int check_num(string temp){
     string numbers="0123456789";
     int flag=0;
     int* p = &flag;
-    for(int i=0; i < size(temp); i++){
+    for(int i = 0; i < size(temp); i++){
         *p=0;
-        for(int j=0; j < size(numbers); j++){
+        for(int j = 0; j < size(numbers); j++){
             if(temp[i]==numbers[j]){
-                *p=1;
+                *p = 1;
             }
         }
         if(*p==0){

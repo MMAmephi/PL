@@ -23,7 +23,7 @@ int main()
     }
     while(end != 0){
         cout << word_now << "\n";
-        cout << "\n"<< "Введите букву: ";
+        cout << "\n" << "Введите букву: ";
         char temp;
         cin >> temp;
         if(checking(word, temp)){

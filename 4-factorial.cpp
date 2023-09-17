@@ -14,10 +14,10 @@ int check_num(string temp){
     string numbers="0123456789";
     int flag=0;
     int* p = &flag;
-    for(int i=0; i < size(temp); i++){
+    for(int i = 0; i < size(temp); i++){
         *p=0;
-        for(int j=0; j < size(numbers); j++){
-            if(temp[i]==numbers[j]){
+        for(int j = 0; j < size(numbers); j++){
+            if(temp[i] == numbers[j]){
                 *p=1;
             }
         }
@@ -35,7 +35,7 @@ int main(){
         string n;
         cin >> n;
         //n = "12";
-        if(check_num(n)==1){
+        if(check_num(n) == 1){
             int num = stoi(n);
             if(num >= 0){
                 if(num <= 100000){
