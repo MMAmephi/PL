@@ -11,7 +11,7 @@ int main()
     *p = &v;
     cout << **p << "\n" << v << "\n";
     cout << *p << "\n";
-    cout << p;
+    cout << p << "\n";
     free(p);
     return 0;
 }
