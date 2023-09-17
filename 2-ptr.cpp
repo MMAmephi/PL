@@ -13,4 +13,5 @@ int main()
     cout << *p << "\n";
     cout << p;
     free(p);
+    return 0;
 }
