@@ -17,9 +17,9 @@ int check_num(string temp){
     string numbers="0123456789";
     int flag=0;
     int* p = &flag;
-    for(int i = 0; i < size(temp); i++){
+    for(int i = 0; i < sizeof(temp); i++){
         *p=0;
-        for(int j = 0; j < size(numbers); j++){
+        for(int j = 0; j < sizeof(numbers); j++){
             if(temp[i]==numbers[j]){
                 *p = 1;
             }
