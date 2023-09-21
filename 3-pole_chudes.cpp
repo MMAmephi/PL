@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 
 using namespace std;
 
@@ -12,8 +13,14 @@ int checking(string word, char letter){
 }
 
 int main()
-{
-    string word {"colonka"};
+{   
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    setlocale(LC_ALL,"russian");
+    string word;
+    cout << "\n" << "Введите слово: ";
+    cin >> word;
+    //string word {"колонка"};
     string word_now;
     string already_used;
     int length = size(word);
@@ -23,7 +30,7 @@ int main()
     }
     while(end != 0){
         cout << word_now << "\n";
-        cout << "\n" << "Р’РІРµРґРёС‚Рµ Р±СѓРєРІСѓ: ";
+        cout << "\n" << "Введите букву: ";
         char temp;
         cin >> temp;
         if(checking(word, temp)){
@@ -35,13 +42,13 @@ int main()
                 }
             }
             if(end!=0){
-                cout << "РЈРіР°РґР°Р»Рё!" << "\n";
+                cout << "Вы угадали!" << "\n";
             }
         }
         else{
-            cout << "РќРµС‚ С‚Р°РєРѕР№ Р±СѓРєРІС‹! РџРѕРїСЂРѕР±СѓР№СЊРµ РґСЂСѓРіСѓСЋ!" << "\n";
+            cout << "Такой буквы нет! Попробуйте ещё раз!" << "\n";
         }
     }
-    cout << "Р’С‹ СѓРіР°РґР°Р»Рё СЃР»РѕРІРѕ - colonka! РџРѕР·РґСЂР°РІР»СЏРµРј!";
+    cout << "Вы угадали слово: " << word <<"! Поздравляем!";
     return 0;
 }
