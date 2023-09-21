@@ -1,25 +1,29 @@
 ﻿#include <iostream>
+#include <windows.h>
 #include <string>
 
 using namespace std;
 
-int fib(int i){
-    if(i == 1){
-        return 0;
+void fib(int n){
+    long long int prev_number = 0;
+    long long int *ppn=&prev_number;
+    long long int number = 1;
+    long long int *pn=&number;
+    for(int k = 1; k <= n; k++){
+        cout << number << " ";
+        long long int temp=number;
+        *pn=number+prev_number;
+        *ppn=temp;
     }
-    if(i == 2){
-        return 1;
-    }
-    return fib(i-2) + fib(i-1);
 }
 
 int check_num(string temp){
-    string numbers="0123456789";
+    string numbers="-0123456789";
     int flag=0;
     int* p = &flag;
-    for(int i = 0; i < sizeof(temp); i++){
+    for(int i = 0; i < size(temp); i++){
         *p=0;
-        for(int j = 0; j < sizeof(numbers); j++){
+        for(int j = 0; j < size(numbers); j++){
             if(temp[i]==numbers[j]){
                 *p = 1;
             }
@@ -32,20 +36,21 @@ int check_num(string temp){
 }
 
 int main(){
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    setlocale(LC_ALL,"russian");
     int end = 0;
     while(end == 0){
-        cout << "Введите целое положительное число не большее 100:" <<"\n";
+        cout << "Введите целое число меньшее 90" <<"\n";
         string n;
         cin >> n;
         //n = "12";
         if(check_num(n)==1){
             int num = stoi(n);
             if(num >= 1){
-                if(num <= 100){
+                if(num < 90){
                     cout << "Первые " << num << " чисел Фибоначчи:" << "\n";
-                    for(int k=1; k <= num; k++){
-                        cout << fib(k) << " ";
-                    }
+                    fib(num);
                     end=1;
                 }
                 else{
