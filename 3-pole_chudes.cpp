@@ -37,8 +37,8 @@ int main()
             already_used.push_back(temp);
             for(int i = 0; i < size(word); i++){
                 if(temp == word[i]){
-                    word_now[i]=temp;
-                    end-=1;
+                    word_now[i] = temp;
+                    end -= 1;
                 }
             }
             if(end!=0){
