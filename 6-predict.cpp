@@ -49,7 +49,7 @@ int main(){
     //date="10.10.2003";
     cout << "Здравстсвуйте, " << name << "!";
     int temp = random();
-    cout << temp << "\n";
+    //cout << temp << "\n";
     unsigned int x = pow(date_sum(date), month(date))+temp;
     //cout << x <<"\n";
     int arr[5];
