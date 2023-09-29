@@ -18,9 +18,9 @@ int main()
     SetConsoleOutputCP(1251);
     setlocale(LC_ALL,"russian");
     string word;
-    cout << "\n" << "Введите слово: ";
+    cout << "\n" << "Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ: ";
     cin >> word;
-    //string word {"колонка"};
+    //string word {"пїЅпїЅпїЅпїЅпїЅпїЅпїЅ"};
     string word_now;
     string already_used;
     int length = size(word);
@@ -30,7 +30,7 @@ int main()
     }
     while(end != 0){
         cout << word_now << "\n";
-        cout << "\n" << "Введите букву: ";
+        cout << "\n" << "Р’РІРµРґРёС‚Рµ Р±СѓРєРІСѓ: ";
         char temp;
         cin >> temp;
         if(checking(word, temp)){
@@ -42,13 +42,13 @@ int main()
                 }
             }
             if(end!=0){
-                cout << "Вы угадали!" << "\n";
+                cout << "Р’С‹ СѓРіР°РґР°Р»Рё Р±СѓРєРІСѓ!" << "\n";
             }
         }
         else{
-            cout << "Такой буквы нет! Попробуйте ещё раз!" << "\n";
+            cout << "РЈРІС‹ С‚Р°РєРѕР№ Р±СѓРєРІС‹ РЅРµС‚! РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘!" << "\n";
         }
     }
-    cout << "Вы угадали слово: " << word <<"! Поздравляем!";
+    cout << "Р’С‹ СѓРіР°РґР°Р»Рё СЃР»РѕРІРѕ: " << word <<"! РџРѕР·РґСЂР°РІР»СЏРµРј!";
     return 0;
 }

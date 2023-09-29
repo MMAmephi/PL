@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <windows.h>
 #include <string>
 
@@ -6,14 +6,12 @@ using namespace std;
 
 void fib(int n){
     long long int prev_number = 0;
-    long long int *ppn=&prev_number;
     long long int number = 1;
-    long long int *pn=&number;
     for(int k = 1; k <= n; k++){
         cout << number << " ";
         long long int temp=number;
-        *pn=number+prev_number;
-        *ppn=temp;
+        number+=prev_number;
+        prev_number=temp;
     }
 }
 
