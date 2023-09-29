@@ -14,13 +14,18 @@ int checking(string word, char letter){
 
 int main()
 {   
+    system("chcp 1251");
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     setlocale(LC_ALL,"russian");
     string word;
     cout << "\n" << "Введите слово: ";
     cin >> word;
+<<<<<<< HEAD
     //string word {"�������"};
+=======
+    //string word {"колонка"};
+>>>>>>> 9607b077b1fc1f564aa3bbc05994bae52f7f6bfd
     string word_now;
     string already_used;
     int length = size(word);
@@ -42,11 +47,19 @@ int main()
                 }
             }
             if(end!=0){
+<<<<<<< HEAD
                 cout << "Вы угадали букву!" << "\n";
             }
         }
         else{
             cout << "Увы такой буквы нет! Попробуйте ещё!" << "\n";
+=======
+                cout << "Вы угадали!" << "\n";
+            }
+        }
+        else{
+            cout << "Такой буквы нет! Попробуйте ещё раз!" << "\n";
+>>>>>>> 9607b077b1fc1f564aa3bbc05994bae52f7f6bfd
         }
     }
     cout << "Вы угадали слово: " << word <<"! Поздравляем!";

@@ -9,9 +9,15 @@ void fib(int n){
     long long int number = 1;
     for(int k = 1; k <= n; k++){
         cout << number << " ";
+<<<<<<< HEAD
         long long int temp=number;
         number+=prev_number;
         prev_number=temp;
+=======
+        long long int temp = number;
+        number += prev_number;
+        prev_number = temp;
+>>>>>>> 9607b077b1fc1f564aa3bbc05994bae52f7f6bfd
     }
 }
 
