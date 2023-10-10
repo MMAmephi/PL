@@ -59,12 +59,6 @@ void true_rand(array<int,2> &mas1, array<int,2> &mas2, array<int,2> &mas3){
     }    
 }
 
-void angle(array<int,2> &k_b, array<int,2> &r_b, array<int,2> &k_w){
-    if(dist(r_b, k_w)<=2){
-
-    }
-}
-
 void get_move(array<int,2> &point, array<char,8> &letters){
     string temp;
     cin >> temp;
@@ -100,6 +94,12 @@ int is_possible(array<int,2> &k_b, array<int,2> &r_b, array<int,2> &k_w, array<i
     }
 }
 
+void angle(array<int,2> &k_b, array<int,2> &r_b, array<int,2> &k_w, array<int,2> &k_move, array<int,2> &r_move){
+    if(dist(r_b, k_w)<=2 && ){
+
+    }
+}
+
 int main()
 {
     array < array<char,8>, 8> board;
@@ -108,6 +108,8 @@ int main()
     array<int,2> king_w={0,0};
     array<int,2> rook_b={0,0};
     array<int,2> point={0,0};
+    array<int,2> k_move={0,0};
+    array<int,2> r_move={0,0};
 
     fill_board(board);
     true_rand(king_b, rook_b, king_w);
