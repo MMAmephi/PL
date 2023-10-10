@@ -95,9 +95,6 @@ int is_possible(array<int,2> &k_b, array<int,2> &r_b, array<int,2> &k_w, array<i
 }
 
 void angle(array<int,2> &k_b, array<int,2> &r_b, array<int,2> &k_w, array<int,2> &k_move, array<int,2> &r_move){
-    if(dist(r_b, k_w)<=2 && ){
-
-    }
 }
 
 int main()
