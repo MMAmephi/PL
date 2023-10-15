@@ -9,15 +9,9 @@ void fib(int n){
     long long int number = 1;
     for(int k = 1; k <= n; k++){
         cout << number << " ";
-<<<<<<< HEAD
         long long int temp=number;
         number+=prev_number;
         prev_number=temp;
-=======
-        long long int temp = number;
-        number += prev_number;
-        prev_number = temp;
->>>>>>> 9607b077b1fc1f564aa3bbc05994bae52f7f6bfd
     }
 }
 
@@ -45,7 +39,7 @@ int main(){
     setlocale(LC_ALL,"russian");
     int end = 0;
     while(end == 0){
-        cout << "Введите целое число меньшее 90" <<"\n";
+        cout << "Введите положительное число меньшее 90" <<"\n";
         string n;
         cin >> n;
         //n = "12";
@@ -58,17 +52,17 @@ int main(){
                     end=1;
                 }
                 else{
-                    cout << "Слишком большое число! Попробуйте ещё раз!" << "\n";
+                    cout << "Слишком большое число! Попробуйте другое" << "\n";
                     end=0;
                 }
             }
             else{
-                cout << "Вы ввели отрицательное число! Попробуйте ещё раз!" << "\n";
+                cout << "Вы ввели отрицательное число! Попробуйте другое" << "\n";
                 end=0;
             }
         }
         else{
-            cout << "Это не целое число! Попробуйте ещё раз!" << "\n";
+            cout << "Вы ввели не целое число! Попробуйте ещё" << "\n";
             end=0;
         }
     }
