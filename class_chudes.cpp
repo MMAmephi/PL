@@ -7,12 +7,13 @@
 using namespace std;
 
 class Yakubovich{
-public:
+private:
     string start_replies[3]={"Прекрасный день, чтобы сыграть в поле чудес! Хотите начать?\nВведите Y, чтобы начать, N, чтобы закончить игру.", "Это что новый игрок?! Будем крутить барабан?\nВведите Y, чтобы начать, N, чтобы закончить игру.", "Добро пожаловать в игру поле чудес! Начнём?\nВведите Y, чтобы начать, N, чтобы закончить игру."};
     string good_replies[3]={"Вы чертовски правы, есть такая буква! Продолжим!", "Ваша интуиция не подвела вас!", "Точно в цель!"};
     string bad_replies[3]={"К сожалению, вы ошиблись. Попробуйте другую букву!", "В этот раз не повезло! Может, другая буква?", "Не ошибается только тот, кто ничего не делает! Попробуйте другую букву!"};
     string error_replies[3]={"Кажется, кто-то основательно забыл алфавит.", "Да вы что! Это даже не буква!", "Кому-то пора вернуться в первый класс или начать читать книги!"};
     string end_replies[3]={"Вы наш победитель! Поздравляем!", "Вы отгадали слово! Так держать!", "Хорошая работа! Слово отгадано!"};
+public:
     char letter;
 
     void print_reply(string reply){
@@ -60,11 +61,13 @@ public:
 };
 
 class Word{
-public:
+private:
+    string alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
     string word;
     vector<int> flags;
     int length;
-    string alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+
+public:
 
     void set_word(string new_word){
         word = new_word;
@@ -124,11 +127,13 @@ public:
 };
 
 class Game{
-public:
+private:
     string dictionary[5]={"тубус", "клавиатура", "принтер", "калькулятор", "аскорбинка"};
     Word current_word;
-    Yakubovich y;
 
+public:
+    Yakubovich y;
+    
     void start(){
         SetConsoleCP(1251);
         SetConsoleOutputCP(1251);
