@@ -1,0 +1,5 @@
+﻿  Game.cpp
+C:\Users\merku\source\repos\Pole_chudes\Game.cpp(15,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Pole_chudes.cpp
+  Создание кода...
+  Pole_chudes.vcxproj -> C:\Users\merku\source\repos\Pole_chudes\x64\Debug\Pole_chudes.exe
