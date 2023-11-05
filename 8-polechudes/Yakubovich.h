@@ -1,17 +1,20 @@
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <ctime>
 
 using namespace std;
 
 class Yakubovich{
 private:
-    string start_replies[3];
-    string good_replies[3];
-    string bad_replies[3];
-    string error_replies[3];
-    string end_replies[3];
+    vector<string> replies;
 public:
+
     char letter;
+
+    Yakubovich();
 
     void print_reply(string reply);
 

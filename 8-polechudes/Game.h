@@ -8,7 +8,6 @@ using namespace std;
 
 class Game{
 private:
-    string dictionary[5];
     Word current_word;
 
 public:

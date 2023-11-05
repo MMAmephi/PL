@@ -1,13 +1,6 @@
 #include "Word.h"
 
-Word::Word(){
-    string alphabet = "ΰαβγδεΈζηθικλμνξοπρςστυφχψωϊϋόύώÿ";
-    string word;
-    vector<int> flags;
-    int length;   
-}
-
-Word::~Word(){
+Word::Word(){ 
 }
 
 void Word::set_word(string new_word){
@@ -31,6 +24,7 @@ void Word::print(){
 }
 
 int Word::check_error(char current_letter){
+    string alphabet = "Π°Π±Π²Π³Π΄ΠµΡ‘Π¶Π·ΠΈΠΉΠΊΠ»ΠΌΠ½ΠΎΠΏΡ€ΡΡ‚ΡƒΡ„Ρ…Ρ†Ρ‡ΡΡ‰ΡΡ‹ΡΡΡΡ";
     for(int i = 0; i < size(alphabet); i++){
         if(current_letter == alphabet[i]){
             return 1;

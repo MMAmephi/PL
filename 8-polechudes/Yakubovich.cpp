@@ -1,58 +1,70 @@
 #include "Yakubovich.h"
 
-Yakubovich::Yakubovich()
-{
-    string start_replies[3]={"Прекрасный день, чтобы сыграть в поле чудес! Хотите начать?\nВведите Y, чтобы начать, N, чтобы закончить игру.", "Это что новый игрок?! Будем крутить барабан?\nВведите Y, чтобы начать, N, чтобы закончить игру.", "Добро пожаловать в игру поле чудес! Начнём?\nВведите Y, чтобы начать, N, чтобы закончить игру."};
-    string good_replies[3]={"Вы чертовски правы, есть такая буква! Продолжим!", "Ваша интуиция не подвела вас!", "Точно в цель!"};
-    string bad_replies[3]={"К сожалению, вы ошиблись. Попробуйте другую букву!", "В этот раз не повезло! Может, другая буква?", "Не ошибается только тот, кто ничего не делает! Попробуйте другую букву!"};
-    string error_replies[3]={"Кажется, кто-то основательно забыл алфавит.", "Да вы что! Это даже не буква!", "Кому-то пора вернуться в первый класс или начать читать книги!"};
-    string end_replies[3]={"Вы наш победитель! Поздравляем!", "Вы отгадали слово! Так держать!", "Хорошая работа! Слово отгадано!"};
-    char letter;
-}
-
-Yakubovich::~Yakubovich()
-{
+Yakubovich::Yakubovich(){
 }
 
 void Yakubovich::print_reply(string reply){
-    for(int i=0; i<size(reply); i++){
-        cout << reply[i];
+    cout << reply << "\n";
+}
+
+vector<string> get_reply(string file_name){
+    vector<string> out;
+    string line;
+    ifstream in(file_name);
+    if (in.is_open()){
+        getline(in, line);
     }
-    cout << "\n";
+    in.close();
+
+    stringstream ss(line);
+    string s;
+    while(getline(ss, s, ';')){
+        out.push_back(s);
+    }
+    return out;
 }
 
 void Yakubovich::start_reply(){
     srand(time(NULL));
-    print_reply(start_replies[rand()%3]);
+    replies = get_reply("start_replies.txt");
+    print_reply(replies[rand()%(replies.size())]);
 }
 
 void Yakubovich::good_reply(){
     srand(time(NULL));
-    print_reply(good_replies[rand()%3]);
+    replies = get_reply("good_replies.txt");
+    print_reply(replies[rand()%3]);
 }
 
 void Yakubovich::bad_reply(){
     srand(time(NULL));
-    print_reply(bad_replies[rand()%3]);
+    replies = get_reply("bad_replies.txt");
+    print_reply(replies[rand()%3]);
 }
 
 void Yakubovich::error_reply(){
     srand(time(NULL));
-    print_reply(error_replies[rand()%3]);
+    replies = get_reply("error_replies.txt");
+    print_reply(replies[rand()%3]);
 }
 
 void Yakubovich::end_reply(){
     srand(time(NULL));
-    print_reply(end_replies[rand()%3]);
+    replies = get_reply("end_replies.txt");
+    print_reply(replies[rand()%3]);
 }
 
 void Yakubovich::goodbye(){
-    cout << "Хорошо поиграли! До новых встреч!";
+    cout << "РҐРѕСЂРѕС€Рѕ РїРѕРёРіСЂР°Р»Рё! Р”Рѕ РЅРѕРІС‹С… РІСЃС‚СЂРµС‡!";
 }
 
 void Yakubovich::get_letter(){
-    char temp;
-    cout << "Введите букву!\n";
+    string temp;
+    cout << "Р’РІРµРґРёС‚Рµ Р±СѓРєРІСѓ!\n";
     cin >> temp;
-    letter = temp;
+    while(size(temp)!=1){
+        cout << "РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РѕРґРЅСѓ Р±СѓРєРІСѓ!\n";
+        cin >> temp;
+    }
+    letter = temp[0];
 }

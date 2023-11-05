@@ -6,7 +6,6 @@ using namespace std;
 
 class Word{
 private:
-    string alphabet;
     string word;
     vector<int> flags;
     int length;
@@ -16,7 +15,6 @@ public:
     void set_word(string new_word);
 
     Word();
-    ~Word();
 
     void print();
 

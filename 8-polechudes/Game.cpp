@@ -1,7 +1,6 @@
 #include "Game.h"
 
 Game::Game(){
-    string dictionary[5]={"тубус", "клавиатура", "принтер", "калькулятор", "аскорбинка"};
     Word current_word;
     Yakubovich y;   
 }
@@ -19,17 +18,32 @@ bool Game::suggest(){
     y.start_reply();
     char temp;
     cin >> temp;
-    if(temp == 'Y'){
+    if(temp == 'Д'){
         return 1;
-    }
-    if(temp == 'N'){
-        return 0;
     }
     else return 0;
 }
 
+string get_word(){
+    vector<string> out;
+    string line;
+    ifstream in("dictionary.txt");
+    if (in.is_open()){
+        getline(in, line);
+    }
+    in.close();
+
+    stringstream ss(line);
+    string s;
+    while(getline(ss, s, ';')){
+        out.push_back(s);
+    }
+    srand(time(NULL));
+    return out[rand()%(out.size())];
+}
+
 void Game::game(){
-    current_word.set_word(dictionary[rand()%5]);
+    current_word.set_word(get_word());
     current_word.print();
     while(current_word.check_end()==0){
         y.get_letter();
