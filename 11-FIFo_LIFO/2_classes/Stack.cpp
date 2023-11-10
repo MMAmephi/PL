@@ -1,5 +1,11 @@
 #include "Stack.h"
 
+Stack::Stack(vector<int> els){
+    for(int i=0; i<els.size(); i++){
+        elements.push_back(els[i]);
+    }    
+}
+
 void Stack::push(int element) {
     elements.push_back(element);
 }

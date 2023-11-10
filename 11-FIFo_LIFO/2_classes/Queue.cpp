@@ -1,5 +1,14 @@
 #include "Queue.h"
 
+Queue::Queue(unsigned num, ...){
+    va_list args;
+    va_start(args, num);
+    while(num--){
+        elements.insert(elements.begin(), va_arg(args, unsigned));
+    }
+    va_end(args);   
+}
+
 void Queue::push(int element) {
     elements.insert(elements.begin(), element);
 }
