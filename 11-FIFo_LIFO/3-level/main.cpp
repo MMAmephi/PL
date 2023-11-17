@@ -20,7 +20,7 @@ int main(){
     test2.print();
     test2.pop();
     test2.pop();
-    test2.pop();
+    test2.pop();  
 
     return 0;
 }
