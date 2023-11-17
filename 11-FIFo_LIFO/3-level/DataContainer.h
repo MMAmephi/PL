@@ -1,13 +1,12 @@
 #pragma once
 #include "IStructure.h"
 
-class Stack: public IStructure{
-private:
+class DataContainer: public IStructure{
+protected:
     std::vector <int> elements;
 
 public:
 
-    virtual void push(int element);
     virtual int pop();
     virtual void print();
 };
