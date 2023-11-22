@@ -15,20 +15,25 @@ void LinkedList::push(int element) {
 
 int LinkedList::pop() {
     int temp;
-    if (tail == NULL) return 0;
+    if (tail == NULL){
+        std::cout << "Impossible to pop!";
+    }
     if (head == tail) {
         temp = tail->val;
         delete tail;
         head = tail = NULL;
         return temp;
     }
-    Node* node = head;
-    for (; node->next != tail; node = node->next);
 
-    node->next = NULL;
+    Node* p = head;
+    while(p->next != tail){
+        p = p->next;
+    }
+
+    p->next = NULL;
     temp = tail->val;
     delete tail;
-    tail = node;
+    tail = p;
     return temp;
 }
 
