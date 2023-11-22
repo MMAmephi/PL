@@ -1,9 +1,8 @@
 #pragma once
 
 class Node{
-private:
+public:
     int val;
     Node* next;
-
     Node(int value);
 };
