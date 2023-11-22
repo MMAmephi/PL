@@ -1,5 +1,7 @@
 #include "LinkedList.h"
 
+LinkedList::LinkedList() : head(nullptr), tail(nullptr){}
+
 void LinkedList::push(int element) {
     Node* p = new Node(element);
     if (head == NULL) {
@@ -39,5 +41,5 @@ void LinkedList::print() {
         std::cout << p->val << " ";
         p = p->next;
     }
-    std::cout << "/n";
+    std::cout << "\n";
 }
