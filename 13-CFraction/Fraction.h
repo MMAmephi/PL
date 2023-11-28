@@ -15,6 +15,9 @@ public:
     Fraction operator+ (const Fraction& fr){
         return Fraction(num * fr.denom + fr.num * denom, denom * fr.denom);
     }
+    Fraction operator- (const Fraction& fr){
+        return Fraction(num * fr.denom - fr.num * denom, denom * fr.denom);
+    }
     Fraction operator* (const Fraction& fr){
         return Fraction(num * fr.num, denom * fr.denom); 
     }
