@@ -9,4 +9,5 @@ public:
     virtual int pop();
     virtual void print();
     virtual bool IsEmpty();
+    virtual int len();
 };

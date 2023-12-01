@@ -24,3 +24,7 @@ void Queue::print(){
     }
     std::cout << "\n";
 }
+
+int Queue::len(){
+    return elements.size();
+}

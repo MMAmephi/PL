@@ -52,3 +52,13 @@ void LinkedList::print() {
     }
     std::cout << "\n";
 }
+
+int LinkedList::len(){
+    int k = 0;
+    Node* p = head;
+    while (p) { 
+        p = p->next;
+        k++;
+    }
+    return k;
+}

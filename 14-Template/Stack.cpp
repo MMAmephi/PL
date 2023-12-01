@@ -24,3 +24,7 @@ void Stack::print(){
     }
     std::cout << "\n";
 }
+
+int Stack::len(){
+    return elements.size();
+}

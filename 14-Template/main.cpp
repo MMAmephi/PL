@@ -3,6 +3,7 @@
 #include "LinkedList.h"
 
 template<typename T> void reverse(T*);
+template <> void reverse<>(LinkedList*);
 
 int main(){
     Queue test1;
@@ -15,14 +16,36 @@ int main(){
     test1.print();
 
     Stack test2;
-    test2.push(6);
     test2.push(7);
     test2.push(8);
+    test2.push(9);
     test2.print();
     reverse(&test2);
     test2.print();
     
+    LinkedList test3;
+    test3.push(4);
+    test3.push(5);
+    test3.push(6);
+    test3.print();
+    reverse(&test3);
+    test3.print();
+
     return 0;
+}
+
+template <> void reverse(LinkedList* a){
+    Node* current = a->head;
+    Node *prev = NULL;
+    Node *next = NULL;
+
+    while (current != NULL) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    a->head = prev;
 }
 
 template<typename T> void reverse(T* a){
