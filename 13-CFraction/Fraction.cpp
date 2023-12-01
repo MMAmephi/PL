@@ -37,5 +37,10 @@ void Fraction::print(){
 }
 
 void Fraction::printFraction(){
-    std::cout << num << "/" << denom << "\n";
+    if(num!=0){
+        std::cout << num/denom << " " << (num % denom) << "/" << denom << "\n";    
+    }
+    else{
+        std::cout << num << "\n";
+    }
 }

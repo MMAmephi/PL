@@ -1,9 +1,9 @@
 #include "Fraction.h"
 
 int main(){
-    Fraction test1(-1, -3);
+    Fraction test1(-5, -3);
     test1.print();
-    Fraction test2(6, 10);
+    Fraction test2(10, 6);
     test2.printFraction();
     (test2+test1).print();
     (test2-test1).printFraction();
