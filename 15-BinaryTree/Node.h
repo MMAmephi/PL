@@ -1,10 +1,13 @@
 #pragma once
 
+template<typename T>
 class Node{
 public:
-    Node(int value);
+    Node();
+    Node(T value);
 
-    int key;
+    T key;
     Node *lnode;
     Node *rnode;
+    int height;
 };

@@ -1,3 +1,7 @@
 #include "Node.h"
 
-Node::Node(int value): key(value), lnode(nullptr), rnode(nullptr){}
+template<typename T>
+Node<T>::Node(){}
+
+template<typename T>
+Node<T>::Node(T value): key(value), lnode(nullptr), rnode(nullptr){}
