@@ -1,17 +1,15 @@
+#include <iostream>
 #include "BinaryTree.h"
 
 
 int main() {
-    BinaryTree<double> test;
+    BinaryTree<int> test;
 
-    /*
-    test.insert(50);
     test.insert(30);
-    test.insert(70);
-    test.insert(20);
-    test.insert(40);
-    test.insert(60);
-    test.insert(80);
+    test.insert(12);
+    test.insert(26);
+    test.insert(54);
+    test.insert(8);
 
     std::cout << "Original Tree:\n";
     test.print();
@@ -19,7 +17,6 @@ int main() {
     test.deleteMin();
     std::cout << "\nTree after deleting:\n";
     test.print();
-    */
 
     return 0;
 }
