@@ -26,7 +26,7 @@
             ],
             "preLaunchTask": "g++ build file"
         },
-
+        
         {
             "name": "g++ build and debug makefiles",
             "type": "cppdbg",

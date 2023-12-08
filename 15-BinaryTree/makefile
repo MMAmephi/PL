@@ -1,13 +1,7 @@
-all: main.exe clean run
+all: main.exe run
 
-main.exe: main.o
-	g++ main.o -o main.exe -g
-
-main.o: main.cpp
-	g++ -c main.cpp -o main.o -g
-	
-clean:
-	rm -rf *.o
+main.exe: main.cpp
+	g++ main.cpp -o main.exe
 
 run: main.exe
 	./main.exe
