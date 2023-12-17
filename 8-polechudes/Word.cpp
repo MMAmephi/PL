@@ -25,10 +25,16 @@ void Word::print(){
 
 int Word::check_error(char current_letter){
     string alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-    for(int i = 0; i < size(alphabet); i++){
-        if(current_letter == alphabet[i]){
-            return 1;
+    try{
+        for(int i = 0; i < size(alphabet); i++){
+            if(current_letter == alphabet[i]){
+                return 1;
+            }
         }
+        throw current_letter;
+    }
+    catch(char exception){
+        cout << "'" << exception << "'" << "не является буквой русского алфавита\n";
     }
     return 0;
 }
