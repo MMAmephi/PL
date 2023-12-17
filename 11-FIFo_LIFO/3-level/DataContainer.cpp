@@ -1,12 +1,17 @@
 #include "DataContainer.h"
 
 int DataContainer::pop() {
-    if (!elements.empty()) {
+    try{
+        if (elements.empty()) {
+            throw "the container is empty";
+        }
         int temp = elements.back();
         elements.pop_back();
         return temp;
     }
-    std::cout << "The container is empty";
+    catch(const char* exception){
+        std::cout << "Error: " << exception << "\n";
+    }
     return -1;
 }
 

@@ -5,12 +5,17 @@ void Queue::push(int element) {
 }
 
 int Queue::pop() {
-    if (!elements.empty()) {
-        int temp = elements.back();
+    try{
+        if (elements.empty()) {
+            throw "the queue is empty";
+        }
+        int temp = elements.front();
         elements.pop_back();
         return temp;
     }
-    std::cout << "The queue is empty";
+    catch(const char* exception){
+        std::cout << "Error: " << exception << "\n";
+    }
     return -1;
 }
 

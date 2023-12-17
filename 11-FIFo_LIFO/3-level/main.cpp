@@ -11,6 +11,9 @@ int main(){
     test1.print();
     test1.pop();
     test1.print();
+    test1.pop();
+    test1.pop();
+    test1.pop();
 
     test2.push(1);
     test2.push(2);

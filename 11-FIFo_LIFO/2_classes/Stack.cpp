@@ -11,12 +11,17 @@ void Stack::push(int element) {
 }
 
 int Stack::pop() {
-    if (!elements.empty()) {
+    try{
+        if (elements.empty()) {
+            throw "the stack is empty";
+        }
         int temp = elements.back();
         elements.pop_back();
         return temp;
     }
-    cout << "The stack is empty";
+    catch(const char* exception){
+        cout << "Error: " << exception << "\n";
+    }
     return -1;
 }
 
