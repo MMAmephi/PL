@@ -14,27 +14,33 @@ void LinkedList::push(int element) {
 }
 
 int LinkedList::pop() {
-    int temp;
-    if (tail == NULL){
-        std::cout << "Impossible to pop!";
-    }
-    if (head == tail) {
+    try{
+        int temp;
+        if (tail == NULL){
+            throw "the list is empty";
+        }
+        if (head == tail) {
+            temp = tail->val;
+            delete tail;
+            head = tail = NULL;
+            return temp;
+        }
+
+        Node* p = head;
+        while(p->next != tail){
+            p = p->next;
+        }
+
+        p->next = NULL;
         temp = tail->val;
         delete tail;
-        head = tail = NULL;
+        tail = p;
         return temp;
     }
-
-    Node* p = head;
-    while(p->next != tail){
-        p = p->next;
+    catch(const char* exception){
+        std::cout << "Error: " << exception << "\n";
     }
-
-    p->next = NULL;
-    temp = tail->val;
-    delete tail;
-    tail = p;
-    return temp;
+    return -1;
 }
 
 void LinkedList::print() {

@@ -9,6 +9,7 @@ int main(){
 
     test.pop();
     test.print();
+    std::cout << test.pop() << " " << test.pop() << " " << test.pop();
     
     return 0;
 }
