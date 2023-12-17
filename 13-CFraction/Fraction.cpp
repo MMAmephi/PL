@@ -16,8 +16,11 @@ Fraction::Fraction(float number){
 }
 
 Fraction::Fraction(int a, int b){
-    int temp = gcd(abs(a), abs(b));
-    if(b != 0){
+    try{
+        if(b==0){
+            throw 0;
+        }
+        int temp = gcd(abs(a), abs(b));
         if(b < 0){
             num = -a/temp;
             denom = abs(b)/temp;
@@ -27,8 +30,10 @@ Fraction::Fraction(int a, int b){
             denom = b/temp;
         }
     }
-    else{
-        std::cout << "The denominator is 0! Impossible to create fraction."; 
+    catch(int){
+        num = 0;
+        denom = 1;
+        std::cout << "Error: the denominater is zero\n";
     }
 }
 

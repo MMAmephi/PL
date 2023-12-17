@@ -8,5 +8,8 @@ int main(){
     (test2+test1).print();
     (test2-test1).printFraction();
     (test1*test2).print();
+
+    Fraction test3(0, 0);
+    test3.print();
     return 0;
 }
